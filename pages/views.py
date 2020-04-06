@@ -5,6 +5,7 @@ from listings.models import Realtor
 
 
 def index(request):
+    # Get all listings
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)[:3]
 
     template = 'pages/index.html'
